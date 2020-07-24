@@ -63,6 +63,10 @@ export const Content = styled.div`
   &::-webkit-scrollbar-thumb:hover {
     background: #555; 
   }
+
+  @media (max-height: 424px) {
+    height: 130px;
+  }
 `;
 
 export const Item = styled.div`
