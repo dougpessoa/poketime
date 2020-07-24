@@ -26,7 +26,7 @@
 
 <h2>Instalação</h2>
 
-- Certifique-se de tenha instalado <a href="https://nodejs.org/en/" target="_target">Node.js</a> e <a href="https://yarnpkg.com/">Yarn</a>, caso não tenha, clique nos nomes citados e instale, é bem simples a instalação!
+- Certifique-se de tenha instalado a última versão do <a href="https://nodejs.org/en/" target="_target">Node.js</a> e <a href="https://yarnpkg.com/">Yarn</a>, caso não tenha, clique nos nomes citados e instale, é bem simples a instalação!
 - Abra o terminal e execute o comando: <code>git clone  https://github.com/dougpessoa/pokemericanas.git</code>
 - Após a finalização do download, execute no terminal: <code>yarn</code>
 - E para rodar o projeto execute no terminal: <code>yarn start</code>
