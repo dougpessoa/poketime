@@ -6,6 +6,7 @@ import { TimesCircle } from '../../../styles/icons';
 
 export const Container = styled(animated.div)`
   width: 360px;
+  max-height: 100px;
   position: relative;
   z-index: 6;
 
