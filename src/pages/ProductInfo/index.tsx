@@ -7,12 +7,14 @@ import api from '../../services/api';
 import { loadPokemon } from '../../utils/loadPokemon';
 import DetailProduct from '../../components/DetailProduct';
 import Product from '../../components/Product';
+import Loader from '../../components/Loader';
 
 import { 
   Container,
   Content,
   OtherProducts,
-  UnknownPokemon
+  UnknownPokemon,
+  Loading
 } from './styles';
 
 import IPokemonProps from '../../interfaces/IPokemonProps';
@@ -28,11 +30,14 @@ const ProductInfo: React.FC = () => {
   const [installment, setInstallment] = useState('');
   const [id, setId] = useState(0);
 
+  const [wasLoadedPokemon, setWasLoadedPokemon] = useState(false);
+  const [wasLoadedInfo, setWasLoadedInfo] = useState(false);
   const [havePokemon, setHavePokemon] = useState(false);
 
   const loadSearchedPokemon = useCallback( async (param: string): Promise<void> => {
     await api.get(`/pokemon/${param}`)
       .then((response) => {
+        setWasLoadedInfo(true);
         const res = response.data;
 
         let isFire = false;
@@ -64,12 +69,14 @@ const ProductInfo: React.FC = () => {
       })
       .catch((err) => {
         setHavePokemon(false);
+        setWasLoadedInfo(true);
       })
   }, []);
 
   const autoLoadPokemon = useCallback( async () => {
     const response = await loadPokemon(3);
-    
+
+    setWasLoadedPokemon(true);
     setPokemon(response);
   }, []);
 
@@ -82,7 +89,12 @@ const ProductInfo: React.FC = () => {
     <Container>
       <Content>
         {
-          havePokemon 
+          !wasLoadedInfo 
+          ? <Loading>
+              <Loader /> 
+            </Loading>
+          
+          : havePokemon 
             ? <DetailProduct
                 id={id}
                 name={name}
@@ -103,7 +115,12 @@ const ProductInfo: React.FC = () => {
 
           <div className="others">
           {
-            pokemon.map((pokemon) => (
+            !wasLoadedPokemon
+            ? <Loading>
+               <Loader /> 
+              </Loading> 
+            
+            : pokemon.map((pokemon) => (
               <Link to={`/pokemon/${pokemon.name}`}>
                 <Product
                   id={pokemon.id} 

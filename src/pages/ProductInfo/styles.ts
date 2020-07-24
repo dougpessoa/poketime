@@ -93,3 +93,9 @@ export const UnknownPokemon = styled.div`
     font-size: 25px;
   }
 `;
+
+export const Loading = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content:center;
+`;
