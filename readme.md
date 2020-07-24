@@ -21,7 +21,7 @@
 
 <p>
   Essa aplicação é uma mini-loja de Pokémon psíquicos, se baseando na <a 
-  href="https://shoptime.com.br">Shoptime</a>. Todo o processo assíncrono é buscando na API de Pokémon da <a href="https://pokeapi.co/">PokéAPI</a>. Os preços listados são gerados aleatoriamente e todos os processos de adicionar ou remover são alocados no Local Storage do navegador.  
+  href="https://shoptime.com.br">Shoptime</a>. Todo o processo assíncrono é requisitado através da API de Pokémon da <a href="https://pokeapi.co/">PokéAPI</a>. Os preços listados são gerados aleatoriamente e todos os processos de adicionar ou remover são alocados no Local Storage do navegador.  
 </p>
 
 <h2>Instalação</h2>
