@@ -12,6 +12,10 @@ export const Container = styled.div`
     width: 100%;
     max-width: 1440px;
   }
+
+  @media (max-width: 768px) {
+    padding-top: 115px;
+  }
 `;
 
 export const Cover = styled.div`

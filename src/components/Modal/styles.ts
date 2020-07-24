@@ -25,6 +25,7 @@ export const Content = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
 
   p {
     text-align: center;
@@ -34,6 +35,9 @@ export const Content = styled.div`
   small {
     position: absolute;
     bottom: 10px;
-    
+  }
+
+  @media (max-width: 549px) {
+    width: 91%;
   }
 `;

@@ -18,6 +18,9 @@ export const Container = styled.div`
   align-items: center;
   flex-direction: column;
 
+  @media (max-width: 768px) {
+    padding-top: 115px;
+  }
 `;
 
 export const Cover = styled.div<Props>`

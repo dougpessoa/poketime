@@ -23,9 +23,7 @@ export const Container = styled.div`
   }
 
   @media (max-width: 898px) {
-
     height: 115px;
-    position: relative;
     align-items: flex-start
   }
 

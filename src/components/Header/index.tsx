@@ -1,6 +1,6 @@
-import React, { useState, FormEvent } from 'react';
+import React, { useState, FormEvent, useEffect } from 'react';
 
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 
 import Cart from './Cart';
 
@@ -17,9 +17,14 @@ import {
 import logoImage from '../../assets/images/logo-poketime.png';
 
 const Header: React.FC = () => { 
+  const { pathname } = useLocation();
   const history  = useHistory();
   const [cartIsDisplayed, setCartIsDisplayed] = useState(false);
   const [query, setQuery] = useState('');
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   function search(event: FormEvent<HTMLFormElement>): void {
     event.preventDefault();

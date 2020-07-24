@@ -10,6 +10,10 @@ export const Container = styled.div`
 
   display: flex;
   justify-content: center;
+
+  @media (max-width: 898px) {
+    padding-top: 115px;
+  }
 `;
 
 export const Content = styled.div`
