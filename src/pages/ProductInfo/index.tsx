@@ -19,16 +19,28 @@ import {
 
 import IPokemonProps from '../../interfaces/IPokemonProps';
 
+interface IPokemonInfo {
+  id: number;
+  name: string;
+  image: string;
+  price: number;
+  installment: string;
+  cashback: number;
+}
+
 const ProductInfo: React.FC = () => {
   const { param } = useParams();
 
   const [pokemon, setPokemon] = useState<IPokemonProps[]>([]);
-  const [name, setName] = useState('');
-  const [image, setImage] = useState('');
-  const [price, setPrice] = useState(0);
-  const [cashback, setCashback] = useState(0);
-  const [installment, setInstallment] = useState('');
-  const [id, setId] = useState(0);
+  
+  const [info, setInfo] = useState<IPokemonInfo>({
+    id: 0,
+    name: "",
+    image: "",
+    price: 0,
+    cashback: 0,
+    installment: ""
+  });
 
   const [wasLoadedPokemon, setWasLoadedPokemon] = useState(false);
   const [wasLoadedInfo, setWasLoadedInfo] = useState(false);
@@ -59,12 +71,15 @@ const ProductInfo: React.FC = () => {
         const installmentAmount = (price / 12).toFixed(2).replace(".", ",");
         const cashback = price * 0.05;
 
-        setCashback(cashback);
-        setId(res.id);
-        setName(res.name);
-        setImage(res.sprites.front_default);
-        setPrice(price);
-        setInstallment(installmentAmount);
+        setInfo({
+          id: res.id,
+          name: res.name,
+          image: res.sprites.front_default,
+          price: price,
+          cashback: cashback,
+          installment: installmentAmount
+        });
+
         setHavePokemon(true);
       })
       .catch((err) => {
@@ -96,12 +111,12 @@ const ProductInfo: React.FC = () => {
           
           : havePokemon 
             ? <DetailProduct
-                id={id}
-                name={name}
-                image={image}
-                price={price}
-                installment={installment}
-                cashback={cashback}
+                id={info.id}
+                name={info.name}
+                image={info.image}
+                price={info.price}
+                installment={info.installment}
+                cashback={info.cashback}
               />
             
             : <UnknownPokemon>
