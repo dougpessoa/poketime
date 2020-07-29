@@ -1,6 +1,7 @@
 const formatPriceToBrazilian = (price: number): String => {
-  const brPrice = price.toFixed(2).replace(".", ",").toString();
-  return brPrice;
+  const currency = price.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+
+  return currency;
 }
 
 export default formatPriceToBrazilian;

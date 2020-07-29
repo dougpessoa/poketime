@@ -44,13 +44,13 @@ const Product: React.FC<Props> = ({
           </Title>
           <Price>
             <strong>
-              R${formatPriceToBrazilian(price)}
+              {formatPriceToBrazilian(price)}
             </strong>
             <span>
               10x de R${installmentAmount}
             </span>
             <small>
-              5% de cashback R${calculateCashback(price)}
+              5% de cashback {calculateCashback(price)}
             </small>
           </Price>
         </Info>

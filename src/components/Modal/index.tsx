@@ -26,7 +26,7 @@ const Modal: React.FC<Props> = ({ cashback }) => {
         <p>
           Agradecemos a compra! <br />
           você ganhou de cashback: <br />
-          <strong>R${formatPriceToBrazilian(cashback)}</strong>
+          <strong>{formatPriceToBrazilian(cashback)}</strong>
         </p>
 
         <small>Redirecionando para página de pedidos...</small>

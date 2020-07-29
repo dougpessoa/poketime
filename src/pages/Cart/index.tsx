@@ -126,7 +126,7 @@ const Cart: React.FC = () => {
                     <Image src={item.image} />
                     <Information>
                       <h4>{item.name}</h4>
-                      <span>R$ {formatPriceToBrazilian(item.price)}</span>
+                      <span>{formatPriceToBrazilian(item.price)}</span>
                     </Information>
                     <DeleteButton type="button">
                       <TimesIcon onClick={() => handleDeleteItem(item.uuid)} />
@@ -140,9 +140,9 @@ const Cart: React.FC = () => {
           && <ValueFinal>
               <div>Total</div>
               <div className="price">
-                <strong>R${formatPriceToBrazilian(totalPrice)}</strong>
-                <small>12x de R${formatPriceToBrazilian(totalInstallmentPrice)}</small>
-                <small>5% de cashback: R${formatPriceToBrazilian(cashback) }</small>
+                <strong>{formatPriceToBrazilian(totalPrice)}</strong>
+                <small>12x de {formatPriceToBrazilian(totalInstallmentPrice)}</small>
+                <small>5% de cashback: {formatPriceToBrazilian(cashback) }</small>
               </div>
              </ValueFinal>
         } 

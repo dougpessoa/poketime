@@ -77,7 +77,7 @@ const Cart: React.FC<ResponseToHeader> = ({ closeCart }) => {
                 </h3>
 
                 <span>
-                  R${formatPriceToBrazilian(item.price)}
+                  {formatPriceToBrazilian(item.price)}
                 </span>
               </Description>
               <Remove>

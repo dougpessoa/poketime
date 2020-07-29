@@ -57,9 +57,9 @@ const DetailProduct: React.FC<Props> = ({
         <h2>{name} </h2>
 
         <div>
-          <strong>R$ {formatPriceToBrazilian(price)} </strong>
+          <strong>{formatPriceToBrazilian(price)} </strong>
           <span>10x de  R${installment} </span>
-          <small> 5% de cashback: R${formatPriceToBrazilian(cashback)} </small>
+          <small> 5% de cashback: {formatPriceToBrazilian(cashback)} </small>
         </div>
 
         <ButtonToBuy>

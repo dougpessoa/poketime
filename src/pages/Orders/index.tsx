@@ -105,7 +105,7 @@ const Orders: React.FC = () => {
                       <Image src={product.image} />
                       <Description>
                         <h5>{product.name} </h5>
-                        <span>R${formatPriceToBrazilian(product.price)} </span>
+                        <span>{formatPriceToBrazilian(product.price)} </span>
                       </Description>
                     </Product>
                   ))
@@ -114,8 +114,8 @@ const Orders: React.FC = () => {
               <Item className="small">
                 <div>Total</div>
                 <div className="prices">
-                  <strong>R${formatPriceToBrazilian(item.total)} </strong>
-                  <small>5% de cashback: R${formatPriceToBrazilian(item.cashback)} </small>
+                  <strong>{formatPriceToBrazilian(item.total)} </strong>
+                  <small>5% de cashback: {formatPriceToBrazilian(item.cashback)} </small>
                 </div>
               </Item>
             </Items>
